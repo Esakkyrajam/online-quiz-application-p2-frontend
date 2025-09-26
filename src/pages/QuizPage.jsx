@@ -198,7 +198,7 @@ const QuizPage = () => {
       }
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/participant/quizzes/${id}`,
+          `https://quiz-app-t7t1.onrender.com/api/participant/quizzes/${id}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -249,7 +249,7 @@ const QuizPage = () => {
     if (!quiz || !quiz.questions.length) return;
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/participant/quizzes/${id}/submit`,
+        `https://quiz-app-t7t1.onrender.com/api/participant/quizzes/${id}/submit`,
         { answers },
         { headers: { Authorization: `Bearer ${token}` } }
       );

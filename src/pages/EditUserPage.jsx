@@ -18,7 +18,7 @@ const EditUserPage = () => {
   const fetchUser = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8080/api/admin/users/${userId}`,
+        `https://quiz-app-t7t1.onrender.com/api/admin/users/${userId}`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -56,11 +56,15 @@ const EditUserPage = () => {
     e.preventDefault();
     setSaving(true);
     try {
-      await axios.put(`http://localhost:8080/api/admin/users/${userId}`, user, {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      await axios.put(
+        `https://quiz-app-t7t1.onrender.com/api/admin/users/${userId}`,
+        user,
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
       alert("User updated successfully!");
       navigate("/admin/manage-users");
     } catch (err) {

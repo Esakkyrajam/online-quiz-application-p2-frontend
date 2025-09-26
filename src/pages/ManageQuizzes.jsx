@@ -70,7 +70,7 @@ const ManageQuizzes = () => {
     const fetchQuizzes = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/admin/quizzes",
+          "https://quiz-app-t7t1.onrender.com/api/admin/quizzes",
           {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"), // if using JWT
@@ -96,11 +96,14 @@ const ManageQuizzes = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/admin/quizzes/${id}`, {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      await axios.delete(
+        `https://quiz-app-t7t1.onrender.com/api/admin/quizzes/${id}`,
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
       setQuizzes(quizzes.filter((q) => q.id !== id));
     } catch (err) {
       console.error("Delete failed:", err);

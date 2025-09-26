@@ -313,11 +313,14 @@ const ManageUsers = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/admin/users", {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      const res = await axios.get(
+        "https://quiz-app-t7t1.onrender.com/api/admin/users",
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
 
       // Separate users by role
       const admins = res.data.filter((user) => user.roles.includes("ADMIN"));
@@ -339,11 +342,14 @@ const ManageUsers = () => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
 
     try {
-      await axios.delete(`http://localhost:8080/api/admin/users/${id}`, {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      await axios.delete(
+        `https://quiz-app-t7t1.onrender.com/api/admin/users/${id}`,
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
 
       setAdminUsers(adminUsers.filter((user) => user.id !== id));
       setParticipantUsers(participantUsers.filter((user) => user.id !== id));

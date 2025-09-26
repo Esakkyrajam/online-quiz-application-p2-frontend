@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:8080/api/participant/quizzes", // your Spring Boot backend base URL
+  baseURL: "https://quiz-app-t7t1.onrender.com/api/participant/quizzes", // your Spring Boot backend base URL
   headers: {
     "Content-Type": "application/json",
   },

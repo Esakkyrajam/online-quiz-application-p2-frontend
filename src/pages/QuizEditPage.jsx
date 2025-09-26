@@ -20,7 +20,7 @@ const QuizEditPage = () => {
     const fetchQuiz = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/admin/quizzes/${id}`,
+          `https://quiz-app-t7t1.onrender.com/api/admin/quizzes/${id}`,
           {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
@@ -97,7 +97,7 @@ const QuizEditPage = () => {
     try {
       const updatedQuiz = { title, description, timeLimitSeconds, questions };
       await axios.put(
-        `http://localhost:8080/api/admin/quizzes/${id}`,
+        `https://quiz-app-t7t1.onrender.com/api/admin/quizzes/${id}`,
         updatedQuiz,
         {
           headers: { Authorization: "Bearer " + localStorage.getItem("token") },

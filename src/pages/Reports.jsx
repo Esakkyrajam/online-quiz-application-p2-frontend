@@ -21,11 +21,14 @@ const Reports = () => {
         return;
       }
 
-      const res = await axios.get("http://localhost:8080/api/admin/results", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await axios.get(
+        "https://quiz-app-t7t1.onrender.com/api/admin/results",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       setResults(res.data);
     } catch (err) {
       console.error("Failed to fetch reports", err);

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080/api/auth";
+const BASE_URL = "https://quiz-app-t7t1.onrender.com/api/auth";
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,

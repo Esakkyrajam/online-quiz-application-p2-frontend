@@ -26,7 +26,7 @@ const ResetPssword = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/auth/reset-password",
+        "https://quiz-app-t7t1.onrender.com/api/auth/reset-password",
         {
           token,
           newPassword,

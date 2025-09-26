@@ -21,7 +21,7 @@ const ParticipantDashboard = () => {
         }
 
         const response = await axios.get(
-          "http://localhost:8080/api/participant/quizzes", // removed trailing slash
+          "https://quiz-app-t7t1.onrender.com/api/participant/quizzes", // removed trailing slash
           {
             headers: {
               Authorization: `Bearer ${token}`, // send JWT
